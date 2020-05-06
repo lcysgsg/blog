@@ -1,0 +1,9 @@
+$designWidth: 750;
+$designPer: 1;
+@function hasChangeDesign (){
+    $changeDesignWidth: 640;
+    $changePer: $designWidth * $designPer / $changeDesignWidth;
+}
+@function rem($px) {
+    @return $px / $basePer + rem;
+}
