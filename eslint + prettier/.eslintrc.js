@@ -13,13 +13,16 @@ module.exports = {
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+    // 未使用声明，方便调试
+    "no-unused-vars": "warn",
 
     "prettier/prettier": [
       "error",
       {
         endOfLine: "auto",
+        // 比起页面空格产生的影响，我还是希望代码看起来简单一点
+        htmlWhitespaceSensitivity: "ignore",
       },
     ],
-    "vue/html-self-closing": "error",
   },
 };
