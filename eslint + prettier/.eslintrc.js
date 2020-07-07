@@ -1,18 +1,28 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
   },
-  plugins: ['prettier'],
-  extends: ["plugin:vue/recommended"],
-  extends: ['plugin:vue/essential', '@vue/standard', 'plugin:prettier/recommended'],
+  extends: [
+    "plugin:vue/recommended",
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "prettier/vue",
+  ],
 
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    "prettier/prettier": ["error"]
+    // 未使用声明，方便调试
+    "no-unused-vars": "warn",
+
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+        // 比起页面空格产生的影响，我还是希望代码看起来简单一点
+        htmlWhitespaceSensitivity: "ignore",
+      },
+    ],
   },
-  parserOptions: {
-    parser: "babel-eslint"
-  }
 };
