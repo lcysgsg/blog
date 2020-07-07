@@ -193,7 +193,7 @@ export default {
     // 【列表】获取广告列表
     // doc: http://192.168.2.18:3000/project/141/interface/api/9179
     {
-      funcName: "query",
+      funcName: "Ad_query",
       method: "GET",
       url: "/v1/Ad/query",
     },
@@ -209,7 +209,7 @@ export default {
     // 【评论-创建】创建评论接口
     // doc: http://192.168.2.18:3000/project/141/interface/api/8759
     {
-      funcName: "save",
+      funcName: "Comment_save",
       method: "POST",
       url: "/v1/Comment/save",
     },
@@ -217,7 +217,7 @@ export default {
     // 【点赞-创建】点赞
     // doc: http://192.168.2.18:3000/project/141/interface/api/9407
     {
-      funcName: "save",
+      funcName: "Like_save",
       method: "POST",
       url: "/v1/Like/save",
     },
@@ -225,7 +225,7 @@ export default {
     // 【点赞-删除】取消点赞
     // doc: http://192.168.2.18:3000/project/141/interface/api/9413
     {
-      funcName: "del",
+      funcName: "Like_delete",
       method: "POST",
       url: "/v1/Like/delete",
     },
@@ -233,7 +233,7 @@ export default {
     // 【评论-列表】获取评论列表
     // doc: http://192.168.2.18:3000/project/141/interface/api/9419
     {
-      funcName: "query",
+      funcName: "Comment_query",
       method: "GET",
       url: "/v1/Comment/query",
     },
@@ -241,7 +241,7 @@ export default {
     // 【旅行社评论-列表】获取旅行社评论的列表
     // doc: http://192.168.2.18:3000/project/141/interface/api/9425
     {
-      funcName: "query",
+      funcName: "CompanyComment_query",
       method: "GET",
       url: "/v1/CompanyComment/query",
     },
@@ -249,7 +249,7 @@ export default {
     // 【认证】用户实名认证
     // doc: http://192.168.2.18:3000/project/141/interface/api/9605
     {
-      funcName: "auth",
+      funcName: "UserCertification_auth",
       method: "POST",
       url: "/v1/UserCertification/auth",
     },
@@ -273,7 +273,7 @@ export default {
     // 微信、支付宝等三方账号授权登录接口
     // doc: http://192.168.2.18:3000/project/141/interface/api/9431
     {
-      funcName: "login3rd",
+      funcName: "api_login3rd",
       method: "POST",
       url: "/v1/api/login3rd",
     },
@@ -281,7 +281,7 @@ export default {
     // 获取短信验证码
     // doc: http://192.168.2.18:3000/project/141/interface/api/9437
     {
-      funcName: "send_verify_code",
+      funcName: "api_send_verify_code",
       method: "POST",
       url: "/v1/api/send_verify_code",
     },
@@ -289,7 +289,7 @@ export default {
     // 三方账号绑定手机号接口
     // doc: http://192.168.2.18:3000/project/141/interface/api/9443
     {
-      funcName: "bind_account",
+      funcName: "api_bind_account",
       method: "POST",
       url: "/v1/api/bind_account",
     },
@@ -297,7 +297,7 @@ export default {
     // token刷新接口
     // doc: http://192.168.2.18:3000/project/141/interface/api/9449
     {
-      funcName: "refresh_token",
+      funcName: "api_refresh_token",
       method: "POST",
       url: "/v1/api/refresh_token",
     },
@@ -305,7 +305,7 @@ export default {
     // 后台用户登录小程序端
     // doc: http://192.168.2.18:3000/project/141/interface/api/9569
     {
-      funcName: "loginSystem",
+      funcName: "api_loginSystem",
       method: "POST",
       url: "/v1/api/loginSystem",
     },
@@ -433,7 +433,7 @@ export default {
     // 【列表】查询自己的投诉列表
     // doc: http://192.168.2.18:3000/project/141/interface/api/9611
     {
-      funcName: "query",
+      funcName: "Complain_query",
       method: "GET",
       url: "/v1/Complain/query",
     },
@@ -441,7 +441,7 @@ export default {
     // 【创建】投诉
     // doc: http://192.168.2.18:3000/project/141/interface/api/9617
     {
-      funcName: "save",
+      funcName: "Complain_save",
       method: "POST",
       url: "/v1/Complain/save",
     },
@@ -449,7 +449,7 @@ export default {
     // 【取消】取消投诉
     // doc: http://192.168.2.18:3000/project/141/interface/api/9665
     {
-      funcName: "cancel",
+      funcName: "Complain_cancel",
       method: "POST",
       url: "/v1/Complain/cancel",
     },
@@ -457,7 +457,7 @@ export default {
     // 【详情】查看指定投诉的详情
     // doc: http://192.168.2.18:3000/project/141/interface/api/9671
     {
-      funcName: "read",
+      funcName: "Complain_read",
       method: "GET",
       url: "/v1/Complain/read",
     },
@@ -473,15 +473,31 @@ export default {
     // 【列表】旅游产品列表获取
     // doc: http://192.168.2.18:3000/project/141/interface/api/9629
     {
-      funcName: "Tour_Product_query",
+      funcName: "Product_query",
       method: "GET",
       url: "/v1/biz/Tour/Product/query",
+    },
+
+    // 【注册】注册创建一个商家
+    // doc: http://192.168.2.18:3000/project/141/interface/api/9737
+    {
+      funcName: "Company_save",
+      method: "POST",
+      url: "/v1/biz/Company/save",
+    },
+
+    // 【编辑】编辑一个商家
+    // doc: http://192.168.2.18:3000/project/141/interface/api/9899
+    {
+      funcName: "Company_update",
+      method: "POST",
+      url: "/v1/biz/Company/update",
     },
 
     // 【详情】获取旅游产品详情
     // doc: http://192.168.2.18:3000/project/141/interface/api/9641
     {
-      funcName: "Tour_Product_read",
+      funcName: "Product_read",
       method: "GET",
       url: "/v1/biz/Tour/Product/read",
     },
@@ -489,12 +505,12 @@ export default {
     // 【发起拼团】发起拼团接口
     // doc: http://192.168.2.18:3000/project/141/interface/api/9683
     {
-      funcName: "Tour_Product_startTuan",
+      funcName: "Product_startTuan",
       method: "POST",
       url: "/v1/biz/Tour/Product/startTuan",
     },
 
-    // 【列表】拼团列表获取
+    // 【列表】拼团列表获取(带审核)
     // doc: http://192.168.2.18:3000/project/141/interface/api/9707
     {
       funcName: "TourTuan_query",
@@ -509,6 +525,22 @@ export default {
       method: "GET",
       url: "/v1/biz/TourTuan/read",
     },
+
+    // 【列表】拼团列表获取(按规格)
+    // doc: http://192.168.2.18:3000/project/141/interface/api/9725
+    {
+      funcName: "TourTuanSpecPrice_query",
+      method: "GET",
+      url: "/v1/biz/TourTuanSpecPrice/query",
+    },
+
+    // 【列表】拼团订单列表获取
+    // doc: http://192.168.2.18:3000/project/141/interface/api/9719
+    {
+      funcName: "TourTuanOrder_query",
+      method: "GET",
+      url: "/v1/biz/Tour/TourTuanOrder/query",
+    },
   ],
 
   /**
@@ -521,9 +553,25 @@ export default {
     // 获取身份码
     // doc: http://192.168.2.18:3000/project/141/interface/api/9659
     {
-      funcName: "get_id_code",
+      funcName: "user_get_id_code",
       method: "POST",
       url: "/v1/user/get_id_code",
+    },
+
+    // 获取商家用户信息
+    // doc: http://192.168.2.18:3000/project/141/interface/api/9923
+    {
+      funcName: "api_system_user_info",
+      method: "GET",
+      url: "/v1/api/system_user_info",
+    },
+
+    // 获取会员用户信息
+    // doc: http://192.168.2.18:3000/project/141/interface/api/9929
+    {
+      funcName: "api_user_info",
+      method: "GET",
+      url: "/v1/api/user_info",
     },
   ],
 }
