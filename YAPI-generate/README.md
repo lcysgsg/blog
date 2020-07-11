@@ -1,3 +1,4 @@
-## 根据 yapi 的接口生成前端用的接口文件的脚本
+## 根据 YAPI 接口生成前端接口配置
 
-思路就是拿它接口给的字段，我拼接拼接完事了
+为了发 npm 包，独立出去建了[仓库](https://github.com/lcysgsg/yapi-to-config.git)
+
