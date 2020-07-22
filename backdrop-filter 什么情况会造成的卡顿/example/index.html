@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            height: 100%;
+            background-image: url('http://localhost/static/巫女.jpg');
+        }
+
+        .box1 {
+            width: 600px;
+            height: 600px;
+            backdrop-filter: blur(10px);
+            background-color: rgba(0, 0, 0, .4);
+        }
+
+        .box-transform {
+            width: 300px;
+            position: fixed;
+            left: -100px;
+            top: 0;
+            bottom: 0;
+            z-index: 2;
+            background-color: aquamarine;
+            transform: translate(0);
+            transition: all .3s;
+        }
+
+        .box-transform:hover {
+            transform: translate(200px);
+        }
+        .box-transform:hover ~ .mask{
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, .4);
+        }
+
+        .move {
+            transform: translate(200px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+
+    <!-- <button onclick="tri">transform trigger</button> -->
+    <div class="box-transform"></div>
+    <div class="mask"></div>
+    <!-- <script>
+        var tri = document.getElementById('tri');
+
+    </script> -->
+</body>
+
+</html>
