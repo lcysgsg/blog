@@ -1,0 +1,1 @@
+> [tailwindcss IntelliSense](https://tailwindcss.com/docs/intellisense)
