@@ -11,10 +11,16 @@
     "uni-app",
     "adapter"
   ],
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/lcysgsg/blog.git"
   },
   "author": "lcysgsg",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
 }
