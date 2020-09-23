@@ -12,7 +12,7 @@
 
 借助构建工具在 html 上像调用函数一样写样式，这样就不用再写任何的样式文件。
 
-![image-20200921160859595](css.assets/image-20200921160859595.png)
+![image-20200921160859595](Atomic CSS.assets/image-20200921160859595.png)
 
 ### Static 静态类
 
@@ -20,7 +20,7 @@
 
 更高的可读性
 
-![image-20200921163325685](css.assets/image-20200921163325685.png)
+![image-20200921163325685](Atomic CSS.assets/image-20200921163325685.png)
 
 
 
