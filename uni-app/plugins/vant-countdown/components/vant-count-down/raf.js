@@ -2,11 +2,8 @@
  * requestAnimationFrame polyfill
  */
 
-// import { isServer } from '..';
-
 let prev = Date.now();
 
-/* istanbul ignore next */
 function fallback(fn) {
   const curr = Date.now();
   let ms = Math.max(0, 16 - (curr - prev));
@@ -19,21 +16,20 @@ function fallback(fn) {
   return id;
 }
 
-/* istanbul ignore next */
-// const root = (isServer ? global : window) as Window;
-
-// 支付宝小程序会提示 requestAnimationFrame is not defined， 然后gg
-/* istanbul ignore next */
+// 考虑到 requestAnimationFrame 是 window 上的属性，所以只在 h5 上用 requestAnimationFrame
+// 同时，try...catch 捕获下错误仍会造成影响（造成 app 白屏），所以直接使用条件编译，不再用 try..catch 判断
 let iRaf = null;
 let iCancel = null;
-try {
+
+/* #ifdef H5 */
   iRaf = requestAnimationFrame || fallback;
   iCancel = cancelAnimationFrame || clearTimeout;
-} catch (error) {
-  console.error(error);
+/* #endif */
+
+/* #ifndef H5 */
   iRaf = fallback;
   iCancel = clearTimeout;
-}
+/* #endif */
 
 export function raf(fn) {
   return iRaf.call(this, fn);
