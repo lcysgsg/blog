@@ -4,7 +4,7 @@
 
 ## FAQ
 
-### [Using docker build plugin and getting "Cannot connect to the Docker daemon."](https://github.com/jenkinsci/docker/issues/196)
+### [Using docker build plugin and getting "Cannot connect to the Docker daemon."](https://github.com/jenkinsci/docker/issues/196#issuecomment-252077192)
 
 `./docker-compose.yml` : 
 
