@@ -6,7 +6,7 @@
 
 > [compose-file-v3/#external](https://docs.docker.com/compose/compose-file/compose-file-v3/#external)
 
-通过 compose 启动的时候，如果不设置 `external: true` 或指定 volume name，那么会自动创建一个基于 image name 拼接的新 volume——`${ProjectName}_${VolumeName}`，比如下列例子就会是：*app1_data*, *app2_data*。
+通过 compose 启动的时候，如果不设置 `external: true` 或指定 volume name，那么会自动创建一个基于 image name 拼接的新 volume——`${ProjectName}_${VolumeName}`，比如下列例子就会是：_app1_data_, _app2_data_。
 
 使用指定公共卷示例如下：
 
@@ -80,3 +80,33 @@ $ sudo systemctl disable containerd.service
 -   重启容器：`$ docker restart container_name/container_id`
 
 `$ docker run --rm -d -p 10010:10010/tcp AppName`
+
+## 链接远程 docker
+
+> [Protect the Docker daemon socket](https://docs.docker.com/engine/security/protect-access/#use-tls-https-to-protect-the-docker-daemon-socket)
+
+### 是否开启 `tls`？
+
+-   是
+
+    -   开启 `tlsverify`
+    -   指定证书地址，docker 服务地址
+
+        1. 通过参数指定
+            ```sh
+            docker --tlsverify \
+                --tlscacert=ca.pem \
+                --tlscert=cert.pem \
+                --tlskey=key.pem \
+                -H=$HOST:2376 version
+            ```
+        2. 通过环境变量
+
+            1. `$ export DOCKER_CERT_PATH=/MY_DOCKER_CERT_PATH/`
+
+                - `$ ls /MY_DOCKER_CERT_PATH/`
+                - `证书目录包含对应的证书如 >>> ca.pem cert.pem key.pem`
+
+            2. `$ export DOCKER_HOST=$HOST:2376`
+
+            3. 现在直接使用时链接的即远程的服务 `$ docker version`
